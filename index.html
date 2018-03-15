@@ -2,9 +2,7 @@
   navigator.serviceWorker.register('/sw.js');
 
   function sendPostMessage() {
-    navigator.serviceWorker.getRegistration().then((sw) => {
-      sw.active.postMessage({});
-    });
+    navigator.serviceWorker.controller.postMessage({});
   }
 </script>
 <h1>Deadlock Repro</h1>
