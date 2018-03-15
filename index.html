@@ -1,11 +1,4 @@
 <script>
   navigator.serviceWorker.register('/sw.js');
-
-  function sendPostMessage() {
-    navigator.serviceWorker.getRegistration().then((sw) => {
-      sw.active.postMessage({});
-    });
-  }
 </script>
 <h1>Deadlock Repro</h1>
-<button onclick="sendPostMessage()">Update and unregister</button>
