@@ -1,5 +1,5 @@
 // Change the version to create a new worker version
-const version = '40.0.0';
+const version = '1.0.0';
 
 function updateAndUnregister() {
   self.registration.update();
