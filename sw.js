@@ -1,16 +1,13 @@
 // Change the version to create a new worker version
 const version = '21.0.0';
 
-function forceUpdateOrUnregister() {
+function updateAndUnregister() {
   self.registration.update();
-  if (!self.registration.waiting) {
-    console.log('unregister');
-    return self.registration.unregister();
-  }
+  return self.registration.unregister();
 }
 
 function onInstall() {
-  return forceUpdateOrUnregister();
+  return updateAndUnregister();
 }
 
 self.addEventListener('install', function (event) {
@@ -18,5 +15,5 @@ self.addEventListener('install', function (event) {
 });
 
 self.addEventListener('message', (e) => {
-  forceUpdateOrUnregister();
+  updateAndUnregister();
 });
